@@ -1,22 +1,17 @@
 0-add_integer.txt
 
-# 0-add_integer.txt
+```add_integer(...)``` function that adds 2 integers.
 
-===========================
-How to Use 0-add_integer.py
-===========================
+    >>> add_integer = __import__('0-add_integer').add_integer
 
-This module defines an integer addition function ``add_integer(a, b=98)``.
-
+========
 Usage
-=====
+========
 
-``add_integer(...)``` returns the addition of its two arguments. For numbers,
-that value is equivalent to using the ``+`` operator.
+using integers
 
 ::
 
-    >>> add_integer = __import__('0-add_integer').add_integer
     >>> add_integer(2, 3)
     5
 
@@ -25,14 +20,13 @@ that value is equivalent to using the ``+`` operator.
     >>> add_integer(2, -3)
     -1
 
-The function also works with floating-point values.
+using float
 
 ::
 
     >>> add_integer(2.0, 3.0)
     5
 
-Note that floats are casted to ints before addition is performed.
 
 ::
 
@@ -44,14 +38,14 @@ Note that floats are casted to ints before addition is performed.
     >>> add_integer(-2.9, -0.2)
     -2
 
-Floating and non-floating point values can be combined.
+using Floating and non-floating values.
 
 ::
 
     >>> add_integer(2.3, -3)
     -1
 
-The second argument is optional - by default, it is 98.
+by default b=98.
 
 ::
 
@@ -59,10 +53,6 @@ The second argument is optional - by default, it is 98.
     100
 
 Non-Numbers
-===========
-
-``add_integer()`` expects that both arguments are either integers or floats.
-If either argument is a non-integer and non-float, a TypeError is raised:
 
 ::
 
@@ -88,16 +78,13 @@ If either argument is a non-integer and non-float, a TypeError is raised:
     Traceback (most recent call last):
     TypeError: b must be an integer
 
-If both arguments are non-integers and non-floats, a TypeError message is only
-printed for the first argument.
+using string (input)
 
 ::
 
     >>> add_integer("hello", "there")
     Traceback (most recent call last):
     TypeError: a must be an integer
-
-The function will fail if infinity is provided.
 
 ::
 
@@ -112,7 +99,7 @@ The function will fail if infinity is provided.
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
 
-And again with NaN numbers.
+NaN numbers.
 
 ::
 
